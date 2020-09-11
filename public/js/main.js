@@ -1,7 +1,12 @@
 /******* Slide de la homepage *******/
 
 let i = 0;
-let images = ['../img/entree.jpg', '../img/salon.jpg', '../img/jardin.jpg', '../img/lits.jpg'];
+let images = [
+    '../img/entré.jpg',
+    '../img/relaxation.jpg',
+    '../img/espace_jeu.jpg',
+    '../img/jardin1.jpg',
+    '../img/chambrebebe.jpg'];
 let time = 8000;
 let carousel = document.querySelector('#slides');
 
