@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page non trouvée {% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1> Ouuups ! La page que vous recherchez n'existe pas !</h1>
+        <div class="w-50 text-justify">
+        <p class="text-cards">
+            On a surement du mal vous renseigner ! Pas de problème, vous pouvez retourner
+            sur la page d'accueil ou nous contacter par le formulaire contact.
+        </p>
+        </div>
+        <span>
+            <a href="{{path('homepage')}}" class="btn btn-success">Accueil</a> 
+            <a href="{{path('contact')}}" class="btn btn-info">Contact</a>
+        </span>    
+    </div>
+
+{% endblock %}

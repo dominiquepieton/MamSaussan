@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} L'équipe {% endblock %} 
+{% block body %}
+    <section>
+        <h1 class="title"><em>Présentation de l'équipe,<em></h1>
+
+        <div class="container mt-5">
+            <div class="row justify-content-around mt-4">
+                <div class="col-md-4">
+                  <div class="card bg-light" style="width: 20rem;" data-aos="zoom-in">
+                        <p class=" text-center"><i class="fas fa-user-circle fa-10x faColor mt-2"></i></p>
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-card">Audrey:</h5>
+                            <p class="card-text text-center text-card">maman de deux enfants.</p>
+                            <p class="text-center text-card">
+                                Aide-soignante de formation,</br>
+                                de nature douce et maternelle,
+                            elle s’est naturellement orientée vers la<br>petite enfance.</p>
+                        </div>
+                    </div>  
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-light" style="width: 20rem;" data-aos="zoom-out">
+                        <p class="text-center text-card"><i class="fas fa-user-circle fa-10x faColor mt-2"></i></p>
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-card">Emilie :</h5>
+                            <p class="card-text text-center text-card">maman d’un enfant.</p>
+                            <p class="text-center text-card">
+                            Infirmière diplôme d’état de formation,<br> 
+                            c’est son envie de participer à l’éveil des<br>
+                            enfants qui l’a conduite vers le métier le metier d'assistante maternelle.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </section>
+
+
+{% endblock %}

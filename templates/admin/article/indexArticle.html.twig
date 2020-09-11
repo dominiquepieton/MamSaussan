@@ -1,0 +1,38 @@
+{% extends 'adminbase.html.twig'%}
+
+{% block title %} - Liste des Articles {% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2 class="title-4">TOUS LES ARTICLES :</h2>
+    <span class="mb-3"><a href="{{path('admin_create_article')}}" class="btn btn-success mb-3">Créer un Article</a></span>
+        <div class="bg-transparent shadow p-3 mb-5 scrolly ">
+            <table class="table table-striped">
+                <thead class="bg-light">
+                <tr>
+                    <th class="text-center">titre</th>
+                    <th class="text-center">Url page</th>
+                    <th class="text-center">resumer</th>
+                    <th class="text-center">Supprimer / Modifier</th>
+                </tr> 
+                </thead>
+                <tbody>
+            {% for article in articles %}
+                <tr>
+                    <td class="text-center">{{article.title}}</td>
+                    <td class="text-center">{{article.slug}}</td>
+                    <td class="text-center">{{article.description}}</td>
+                    <td class="text-center">
+                    <span>
+                        <a href="{{ path('admin_edit_article', {'id': article.id}) }}" class="btn btn-info"><i class="far fa-edit"></i></a>
+                        <a href="{{ path('admin_article_delete', {'id': article.id}) }}" class="btn btn-danger" onclick="return confirm(`Êtes-vous sur de vouloir supprimer l'article ?`)"><i class="fas fa-trash"></i></a>
+                     </span>   
+                    </td>
+                </tr>
+            {% endfor %}
+                </tbody>
+            </table>             
+        </div>   
+</div>
+
+{% endblock %}

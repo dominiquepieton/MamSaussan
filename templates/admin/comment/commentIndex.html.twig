@@ -1,0 +1,40 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %} Liste commentaire {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="title">Gestion des commentaires</h1>
+
+        <div class="bg-transparent shadow p-3 mb-5 scrolly ">
+            <table class="table table-striped">
+                <thead class="bg-light">
+                <tr>
+                    <th class="text-center">titre</th>
+                    <th class="text-center">content</th>
+                    <th class="text-center">Auteur</th>
+                    <th class="text-center">Publier </th>
+                    <th class="text-center">Supprimer</th>
+                </tr> 
+                </thead>
+                <tbody>
+            {% for comment in comments %}
+                <tr>
+                    <td class="text-center">{{comment.title}}</td>
+                    <td class="text-center">{{comment.content}}</td>
+                    <td class="text-center">{{comment.author}}</td> 
+                    <td class="text-center">{{comment.publish }}</td>
+                    <td class="text-center">
+                    <span>
+                        <a href="{{ path('admin_edit_comment', {'id': comment.id}) }}" class="btn btn-info"><i class="far fa-edit"></i></a>
+                        <a href="{{ path('admin_comment_delete', {'id': comment.id}) }}" class="btn btn-danger" onclick="return confirm(`Êtes-vous sur de vouloir supprimer le commentaire ?`)"><i class="fas fa-trash"></i></a>
+                     </span>   
+                    </td>
+                </tr>
+            {% endfor %}
+                </tbody>
+            </table>             
+        </div>
+    </div>
+
+{% endblock %}

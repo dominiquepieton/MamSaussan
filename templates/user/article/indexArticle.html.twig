@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les news de la M.A.M{% endblock %}
+
+{% block body %}
+    <h1 class="title"> Les news :</h1>
+    <div class="container">
+        <div class="row mt-5">
+        {% for article in articles %}
+            {% set lien = path('article_show', {'slug': article.slug}) %}
+            <div class="col-md-4">    
+                <div class="card mb-3">
+                    <div class="header text-center">
+                        <h5 class="card-title mt-3"><a href="{{lien}}" class="text-card">{{ article.title }}</a></h5>
+                    </div>
+                      {% for image in article.imgArticles %}
+                            <img src="{{ asset('/uploads/'~image.url) }}" alt="image aleatoire" width="150">
+
+                      {% endfor %}  
+                    <div class="card-body">
+                        <p class="card-text text-justify">{{ article.description }}</p>
+                        <a href="{{lien}}" class="btn btn-info">En savoir plus</a>
+                        <p class="card-text"><small class="text-muted"> date</small></p>
+                    </div>
+                </div>    
+            </div>
+        {% endfor %}    
+        </div>
+    </div>
+{% endblock %}

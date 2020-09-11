@@ -1,0 +1,26 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %} Correction d'un article {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="title"> Modifier un article </h1>  
+        <a href="{{ path('admin_index_article') }}" class="btn btn-primary mt-5"><i class="far fa-arrow-alt-circle-left"></i> Retour</a>
+        {{ form_start(form) }}
+
+        {{ form_widget(form)}}
+            {# Si la route est "annonces_edit on affiche les images #}
+	{% if app.request.attributes.get('_route') == 'admin_edit_article' %}
+        <h2>Images</h2>
+        {% for image in article.imgArticles %}
+            <div>
+                <img src="{{ asset('/uploads/'~image.url) }}" alt="" width="150">
+                {# On ajoute un lien permettant de supprimer une image#}
+                <a href="{{ path('annonces_delete_image', {id: image.id})}}" class="btn btn-danger" data-delete>Supprimer</a>
+            </div>
+        {% endfor %}
+    {% endif %}    
+            <button type="submit" class="btn btn-primary mt-3">Enregistrer</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

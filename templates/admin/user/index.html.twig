@@ -1,0 +1,40 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %} Liste des users {% endblock %}
+
+{% block body %}
+<h1 class="title-4">Liste des utilisateurs</h1>
+<div class="container">   
+<div class="bg-transparent shadow p-3 mb-5 scrolly ">
+            <table class="table table-striped">
+                <thead class="bg-secondary">
+                <tr>
+                    <th class="text-center">prenom</th>
+                    <th class="text-center">nom</th>
+                    <th class="text-center">email</th>
+                    <th class="text-center">nom de l'enfant</th>
+                    <th class="text-center">Supprimer</th>
+                </tr> 
+                </thead>
+                <tbody>
+            {% for user in users %}
+                <tr>
+                    <td class="text-center">{{user.firstName}}</td>
+                    <td class="text-center">{{user.lastName}}</td>
+                    <td class="text-center">{{user.email}}</td> 
+                    <td class="text-center">{{ user.nameChild }}</td>
+                    <td class="text-center">
+                    <span>
+                        <a href="{{ path('admin_user_updatePassword', {'id': user.id})}}" class="btn btn-warning"><i class="far fa-edit"></i>password</a>
+                        <a href="{{ path('admin_user_edit', {'id': user.id})}}" class="btn btn-info"><i class="far fa-edit"></i></a>
+                        <a href="{{ path('admin_user_delete', {'id': user.id})}}" class="btn btn-danger" onclick="return confirm(`Êtes-vous sur de vouloir supprimer l'utilisateur?`)"><i class="fas fa-trash"></i></a>
+                     </span>
+                    </td>
+                </tr>
+            {% endfor %}
+                </tbody>
+            </table>             
+        </div>
+</div>
+
+{% endblock %}

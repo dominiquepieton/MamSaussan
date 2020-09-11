@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Fonctionnement de la MAM {% endblock %}
+
+{% block body %}
+    <h3 class="title-4">Fonctionnement de la M.A.M,</h3>
+    <div class="container">
+        <div class="card-columns">
+            <div class="card" data-aos="zoom-in">
+                <p class="text-center"><i class="far fa-clock fa-7x iTime"></i></p>
+                <div class="card-body">
+                    <h4 class="card-title text-center title-5">Horaires d'ouverture</h4>
+                    <p class="text-center text-card"><strong>7h45-18h00</strong></p>
+                    <p class="card-text text-card">
+                        Nous sommes fermés le mercredi.
+                    </p>
+                </div>
+            </div>
+            <div class="card p-2" data-aos="fade-right">
+                <blockquote class="blockquote mb-0 card-body">
+                    <p class="text-center"><i class="fas fa-utensils"></i></p>
+                    <h4 class="card-title text-center title-5">Les repas</h4>
+                        <p class="text-card">
+                        Les repas et les gouters seront fournis par les parents. Nous fournissons l'eau minérale.</p>
+                </blockquote>
+            </div>
+            <div class="card" data-aos="fade-down">
+                <div class="card-body">
+                    <h5 class="card-title text-center title-5">Type d’accueil</h5>
+                    <p class="card-text text-card text-center">
+                    La MAM Mamz'aile coccinelle accueille des enfants de 1 à 4 jours par semaine.</p>
+                    <p class="text-card">
+                    Nous ne prenons pas les temps périscolaire car nous ne pouvons pas effectuer les trajets
+                    école / mam, de plus cela peut gêner les besoins physiologiques de nos petites-coccinelles.
+                    </p>
+                </div>
+            </div>
+            <div class="card text-white text-center p-3" data-aos="flip-up">
+                <img src="/img/ronde.png" alt="ronde de coccinelle" class="ronde">
+            </div>
+            <div class="card" data-aos="zoom-out">
+                <p class="text-center"><i class="far fa-calendar-alt fa-7x mt-5"></i></p>
+                <div class="card-body">
+                    <h5 class="card-title text-center title-5">Vacances</h5>
+                    <p class="card-text text-center text-card">
+                        En fonction de l'assistante maternelle qui prendra en charge votre petit bout.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %} Création d'utilisateur {% endblock %}
+
+{% form_theme form _self %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-2">&nbsp;</div>
+        <div class="col-6">
+            <h1 class="title"> Créer un user </h1> 
+            <div class="mt-5 mb-3 border">
+                <h5 class="text-center">CRÉER LE PASSWORD :</h5>
+                <label class="text-center mr-5" for="password">Mot de passe :</label>
+                <input type="text" class="gen" placeholder="Mot de passe" required="required" name="password" id="password">
+            </div>
+
+            {{ form_start(form) }}
+
+            {{ form_widget(form)}}
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+            {{ form_end(form) }}
+        </div>
+        <div class="col-2">&nbsp;</div>
+    </div>
+</div>
+
+{% endblock %}

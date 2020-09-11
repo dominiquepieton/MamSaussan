@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Commentaire {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="title">Les Commentaires :</h1>
+        <p class="text-card">Vous pouvez laisser un commentaire ici : <a class="text-link" href="{{ path('comment_new') }}">commenté</a></p>
+         {% for comment in comments %}
+            {% if comment.publish == 1 %}
+                <div class="card w-75 mx-auto mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title">{{comment.title}}</h5>
+                        <p class="card-text">Commentaire écrit par {{ comment.author }} le : {{ comment.createdAt| date('d-m-Y') }}</p>
+                        <p>{{ comment.content | raw }}</p>
+                    </div>
+                </div>
+            {% endif %} 
+         {% endfor %}
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Connexion à l'administration</title>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="card bg-light w-50 mt-5 mx-auto">
+                <div class="card-header">
+                    <h4 class="card-title text-center">
+                        <i class="fas fa-lock"></i>
+                        Connexion à l'administation du site
+                    </h4>
+                    {% if hasError %}
+                        <div class="alert alert-danger">
+                            Soit l'email ou le password est invalide...
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+                            <label for="_username">Email:</label>
+                            <input type="text" name="_username" value="{{ username }}" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="_password">Password:</label>
+                            <input type="password" name="_password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-secondary btn-sm">
+                                <i class="fas fa-lock-open mr-2"></i>
+                                Confirmer
+                            </button>
+                            <a href="{{ path('homepage')}}" class="btn btn-link">
+                                <i class="fas fa-arrow-circle-left"></i>
+                                Retour au site
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

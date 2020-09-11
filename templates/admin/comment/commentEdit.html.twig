@@ -1,0 +1,18 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %} Corriger le commentaire{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2 class="title">Modération des commentaires</h2>
+        <a href="{{ path('admin_comment_index') }}" class="btn btn-primary mt-5"><i class="far fa-arrow-alt-circle-left"></i> Retour</a>
+        <div class="card mt-5">
+            <div class="w-75 mx-auto">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button type="submit" class="btn btn-primary mb-3">Enregistrer</button>
+                {{ form_end(form) }}    
+            </div>
+        </div>
+    </div>
+{% endblock %}

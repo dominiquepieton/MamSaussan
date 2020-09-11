@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Contact {% endblock %}
+
+{% block body %}
+    
+    <h2 class="title text-center" style="margin-top:100px;">Contact</h2>
+    <p class="text-card text-center">
+        Vous pouvez nous contacter par email ou par téléphone, n'oubliez pas de télécharger  la fiche de pré-inscrription et de nous la faire parvenir avec votre mail.
+        Nous vous recontacterons dans les plus bref delai....
+    </p>
+    <div class="container rounded" style="margin-top:100px;">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4  mt-5">
+                <address class="text-card text-center">
+		  		    <strong>MAMZ'AILE COCCINELLE</strong><br>
+		  		        7, rue du pic saint loup<br>
+		  		        34570, SAUSSAN<br>
+				    <abbr title="Phone"><i class="fas fa-phone-square-alt fa-2x"></i></abbr> 04 99 644 548
+			    </address>
+                <div class="card">
+                    <div style="width: 100%"><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=7%20rue%20du%20pic%20saint-loup%2034570%20saussan,%20france+(Mam%20z'aile%20coccinelle)&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://www.maps.ie/route-planner.htm">Plan A Journey</a></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 mt-5">
+
+                {{ form_start(contactForm) }}
+
+                {{ form_widget(contactForm)}}
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                {{ form_end(contactForm) }}
+            </div>
+             <div class="col-lg-2 col-md-2 col-sm-2 mt-5">
+                <p class="text-center">
+				<a class="btn btn-primary btn-lg" target="_blank" href="/img/fiche-de-pre-inscription-pdf.pdf">
+				Télécharger votre<br>
+				<i class="fa fa-download fa-2x"></i><br>
+				Fiche de pré-inscription</a>
+			</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

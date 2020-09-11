@@ -1,0 +1,44 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %} Modifier un profil {% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <a href="{{ path('admin_user_index') }}" class="btn btn-primary mt-5"><i class="far fa-arrow-alt-circle-left"></i> Retour</a>
+    <div class="w-50 mx-auto">
+        <div class="mt-5 mb-3 border">
+                <h5 class="text-center">CRÉER LE PASSWORD :</h5>
+                <label class="text-center mr-5" for="password">Mot de passe :</label>
+                <input type="text" class="gen text-center" placeholder="Mot de passe *" required="required" name="password" id="password">
+            </div>
+
+            {{ form_start(form) }}
+                <div class="form-group">
+                {{form_label(form.hash)}}
+                {{form_widget(form.hash,{ 'attr': {'class':'form-control', 'value': users}})}}
+                </div>
+                <div class="form-group">
+                {{form_label(form.passwordConfirm)}}
+                {{form_widget(form.passwordConfirm,{ 'attr': {'class':'form-control', 'value': users}})}}
+                </div>
+            {{ form_widget(form)}}
+                
+            {% if app.request.attributes.get('_route') == 'admin_user_edit' %}
+                    <h2>Images</h2>
+                    <div class="row mt-3 mb-3">
+                    {% for image in user.images %}
+                        <div class="col-md-3">
+                            <img src="{{ asset('/uploads/'~image.url) }}" alt="" width="150">
+                            {# On ajoute un lien permettant de supprimer une image (sera géré en Ajax) #}
+                            <a href="{{ path('user_delete_image', {id: image.id})}}" class="btn btn-danger" data-delete data-token="{{ csrf_token('delete' ~ image.id )}}">Supprimer</a>
+                        </div>
+                    {% endfor %}
+                    </div>
+            {% endif %}    
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+            {{ form_end(form) }}
+    </div>
+</div>
+
+
+{% endblock %}
