@@ -5,5 +5,56 @@
 {% block body %}
 
 <h1 class="title-4">Dashboard</h1>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-primary mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-users fa-3x"></i>
+                            </div>
+                            <div class="col-8">
+                                <a href="{{ path('admin_user_index') }}" class="text-white">
+                                <h4 class="card-title">nbre d'utilisateurs: {{ stats.users }}</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-success mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="far fa-comments fa-3x"></i>
+                            </div>
+                            <div class="col-8">
+                                <a href="{{ path('admin_comment_index') }}" class="text-white">
+                                <h4 class="card-title">nbre de commentaire : {{stats.comments}}</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-info mb-3 text-center">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-newspaper fa-3x"></i>
+                            </div>
+                            <div class="col-8">
+                               <a href="{{ path('admin_index_article') }}" class="text-white" >
+                                    <h4 class="card-title">nbres d'articles: {{stats.articles}}</h4>
+                               </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

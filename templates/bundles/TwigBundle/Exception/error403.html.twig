@@ -3,13 +3,14 @@
 {% block title %}Pas le droit accés{% endblock %}
 
 {% block body %}
-    <h1>hummm ! Vous n'avez pas les droit d'accés pour cette page</h1>
-    <p>Vous vous êtes peut-etre tromper de page mais l'accés est limité
+    <div class="container bg-light mt-5 mb-5">
+    <h1 class="text-center">hummm ! Vous n'avez pas les droit d'accés pour cette page</h1>
+    <p class="text-justify">Vous vous êtes peut-etre tromper de page mais l'accés est limité
     Veuillez retourner sur la page d'accueil.</p>
 
         <span>
             <a href="{{path('homepage')}}" class="btn btn-success">Accueil</a> 
         </span>
-
+    </div>
 
 {% endblock %}

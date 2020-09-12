@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -18,9 +19,19 @@ class AdminController extends AbstractController
      * @IsGranted("ROLE_ADMIN")
      * @return Response
      */
-    public function index()
+    public function index(EntityManagerInterface $manager)
     {
-        return $this->render('admin/dashboard.html.twig');
+        $users = $manager->createQuery('SELECT COUNT(a) FROM App\Entity\User a')->getSingleScalarResult();
+        $articles = $manager->createQuery('SELECT COUNT(b) FROM App\Entity\Article b')->getSingleScalarResult();
+        $comments = $manager->createQuery('SELECT COUNT(c) FROM App\Entity\Comment c')->getSingleScalarResult();
+        
+        return $this->render('admin/dashboard.html.twig',[
+            'stats' => compact(
+                'users',
+                'articles',
+                'comments'
+                )
+        ]);
     }
 
 

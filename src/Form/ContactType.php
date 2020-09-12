@@ -20,8 +20,10 @@ class ContactType extends AppType
             ->add('email', EmailType::class, $this->getConfig('Email','Entrez votre email'))
             ->add('message',TextareaType::class, $this->getConfig('Message','Entrez votre message'))
             ->add('captcha',RecaptchaSubmitType::class, [
-                'label' => 'envoyer',
-                
+                'label' => 'Envoyer',
+                'attr' => [
+                    'class' => 'btn btn-primary'
+                    ]
             ])
         ;
     }

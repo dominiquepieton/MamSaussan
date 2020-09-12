@@ -3,7 +3,7 @@
 {% block title %} Commentaire {% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div class="container scrolly">
         <h1 class="title">Les Commentaires :</h1>
         <p class="text-card">Vous pouvez laisser un commentaire ici : <a class="text-link" href="{{ path('comment_new') }}">commenté</a></p>
          {% for comment in comments %}
